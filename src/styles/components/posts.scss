@@ -1,0 +1,32 @@
+.PostsList {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.PostsAuthorId{
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.PostsListItem{
+  flex-basis: 49%;
+  max-width: 49%;
+  margin-bottom: 30px;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+.PostsListItemId{
+  margin-bottom: 15px;
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.PostsListItemTitle {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  color: red;
+}

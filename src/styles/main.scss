@@ -1,2 +1,7 @@
-body {
-  background-color: red
+//Global styles
+@import "global";
+@import "base/base";
+
+//Components
+@import "components/posts";
+@import "components/users";

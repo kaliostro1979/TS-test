@@ -1,0 +1,45 @@
+.UsersList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.UsersListItem{
+  padding: 20px 30px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 700;
+  flex-basis: 24%;
+  max-width: 24%;
+  border: 1px solid black;
+  cursor: pointer;
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  &:hover {
+    background-color: black;
+
+    * {
+      color: white;
+    }
+  }
+}
+
+.UserEmail {
+  text-transform: lowercase;
+  text-decoration: underline;
+}
+
+.UserAddress{
+  h3 {
+    margin: 15px 0;
+    text-transform: uppercase;
+    text-decoration: underline;
+  }
+}
+
+.UserValue {
+  color: green;
+}

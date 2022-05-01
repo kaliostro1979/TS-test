@@ -1,0 +1,10 @@
+nav {
+  padding: 15px;
+  margin-bottom: 50px;
+  text-align: center;
+  border-bottom: 1px solid green;
+
+  a:not(:last-child) {
+    margin-right: 20px;
+  }
+}
