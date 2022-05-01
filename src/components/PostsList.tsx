@@ -2,19 +2,17 @@ import React, {useEffect} from 'react';
 import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
 import {fetchPosts} from "../store/action-creators/posts";
+import {useParams, useSearchParams} from "react-router-dom"
 
-interface userIdType {
-    userId?: number | null
-    name?: string | null
-}
 
-const PostsList: React.FC<userIdType> = ({userId}) => {
+const PostsList: React.FC = () => {
     const {posts, loading, error} = useTypedSelector(state => state.posts)
     const dispatch = useDispatch()
+    const paramsId = useParams().id
 
     useEffect(() => {
-        dispatch<any>(fetchPosts(userId))
-    }, [dispatch, userId])
+        dispatch<any>(fetchPosts(paramsId))
+    }, [dispatch, paramsId])
 
     if (loading) {
         return <h1>Loading Posts...</h1>
@@ -26,7 +24,7 @@ const PostsList: React.FC<userIdType> = ({userId}) => {
 
     return (
         <div className={"PostsWrapper"}>
-            <h3 className={"PostsAuthorId"}>Post of user N {userId}</h3>
+            <h3 className={"PostsAuthorId"}>Post of user N {paramsId}</h3>
             <ul className={"PostsList"}>
             {
                 posts.length && posts.map(post => {

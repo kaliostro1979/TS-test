@@ -1,5 +1,5 @@
-type UserType = {
-    id: number
+export type UserType = {
+    id: number | IterableIterator<string>
     name: string
     username: string
     email: string

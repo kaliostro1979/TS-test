@@ -7,7 +7,6 @@ import {useTypedSelector} from "./hooks/useTypedSelector";
 
 
 function App() {
-    const userId = useTypedSelector(state=>state.userId)
 
     return (
         <div className={"Container"}>
@@ -19,7 +18,7 @@ function App() {
                 <Routes>
                     <Route path={"/"} element={<Home/>}/>
                     <Route path={"/users"} element={<UsersList/>}/>
-                    <Route path={`/posts/${userId}`} element={<PostsList userId={userId}/>}/>
+                    <Route path={`/posts/:id`} element={<PostsList/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
