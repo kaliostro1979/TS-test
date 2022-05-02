@@ -3,7 +3,7 @@ import {useTypedSelector} from "../hooks/useTypedSelector";
 import {useDispatch} from "react-redux";
 import {fetchUsers} from "../store/action-creators/user";
 import {userIdAction} from "../store/action-creators/userId";
-import {useNavigate, useSearchParams, URLSearchParamsInit} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {UserType} from "../types/users";
 
 
@@ -11,12 +11,10 @@ const UsersList: React.FC = () => {
     const {users, error, loading} = useTypedSelector(state => state.users)
     const dispatch = useDispatch()
     const history = useNavigate()
-    const [search, setSearch] = useSearchParams()
 
-    const clickHandler = (id: number | string | URLSearchParamsInit)=>{
+    const clickHandler = (id: number)=>{
         dispatch(userIdAction(id))
         history(`/posts/${id}`)
-        setSearch({collection: id})
     }
 
     useEffect(() => {
@@ -34,7 +32,7 @@ const UsersList: React.FC = () => {
         <ul className={"UsersList"}>
             {
                 users.length && users.map((user: UserType) => {
-                    return <li key={user.id} onClick={()=>clickHandler(user?.id)} className={"UsersListItem"}>
+                    return <li key={user.id} onClick={()=>clickHandler(user.id)} className={"UsersListItem"}>
                         <p className={"UserId"}><span className={"UserValue"}>ID:</span> {user.id}</p>
                         <p className={"UserNickName"}><span className={"UserValue"}>Username: </span>{user.username}</p>
                         <p className={"UserName"}><span className={"UserValue"}>Name: </span>{user.name}</p>

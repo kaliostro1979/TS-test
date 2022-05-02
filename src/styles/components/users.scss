@@ -13,6 +13,7 @@
   max-width: 24%;
   border: 1px solid black;
   cursor: pointer;
+  transition: all .3s ease;
 
   p {
     margin-bottom: 10px;
@@ -20,6 +21,7 @@
 
   &:hover {
     background-color: black;
+    transform: scale(1.1);
 
     * {
       color: white;
